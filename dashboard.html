@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FloraCare OS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fbfcfb;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-emerald-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="p-2 bg-emerald-600 rounded-xl text-white">
+                    <i data-lucide="sprout" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-emerald-900">FloraCare<span class="text-emerald-600">OS</span></span>
+            </div>
+            
+            <div class="flex items-center gap-8 font-medium text-slate-600">
+                <a href="index.html" class="hover:text-emerald-600 transition-colors">Home</a>
+                <a href="dashboard.html" class="text-emerald-600 border-b-2 border-emerald-600 pb-1">Dashboard</a>
+                <a href="records.html" class="hover:text-emerald-600 transition-colors">Records</a>
+                <a href="settings.html" class="hover:text-emerald-600 transition-colors">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Live Device Status</h1>
+                <p class="text-slate-500">Real-time telemetry and manual overrides for your device.</p>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-2xl p-4 flex items-center gap-4 shadow-sm self-start md:self-auto">
+                <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-lg">
+                    🌿
+                </div>
+                <div>
+                    <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Monitored Plant</p>
+                    <h2 class="text-base font-bold text-slate-800">Monstera Deliciosa</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-4">
+                <div class="flex justify-between items-start">
+                    <div class="p-3 bg-blue-50 text-blue-600 rounded-xl">
+                        <i data-lucide="droplets" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-semibold bg-blue-50 text-blue-700 px-2 py-1 rounded">Optimal</span>
+                </div>
+                <div>
+                    <p class="text-sm text-slate-400 font-medium">Soil Moisture</p>
+                    <h3 class="text-3xl font-bold text-slate-800">42%</h3>
+                </div>
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                    <div class="bg-blue-500 h-full rounded-full" style="width: 42%"></div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-4">
+                <div class="flex justify-between items-start">
+                    <div class="p-3 bg-teal-50 text-teal-600 rounded-xl">
+                        <i data-lucide="container" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-1 rounded">Adequate</span>
+                </div>
+                <div>
+                    <p class="text-sm text-slate-400 font-medium">Water Tank level</p>
+                    <h3 class="text-3xl font-bold text-slate-800">78%</h3>
+                </div>
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                    <div class="bg-teal-500 h-full rounded-full" style="width: 78%"></div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-4">
+                <div class="flex justify-between items-start">
+                    <div class="p-3 bg-amber-50 text-amber-600 rounded-xl">
+                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-semibold bg-amber-50 text-amber-700 px-2 py-1 rounded">Clean</span>
+                </div>
+                <div>
+                    <p class="text-sm text-slate-400 font-medium">Leaf Cleanliness</p>
+                    <h3 class="text-3xl font-bold text-slate-800">92%</h3>
+                </div>
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                    <div class="bg-amber-500 h-full rounded-full" style="width: 92%"></div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-4">
+                <div class="flex justify-between items-start">
+                    <div class="p-3 bg-orange-50 text-orange-600 rounded-xl">
+                        <i data-lucide="thermometer" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-semibold bg-emerald-50 text-emerald-700 px-2 py-1 rounded">Normal</span>
+                </div>
+                <div>
+                    <p class="text-sm text-slate-400 font-medium">Ambient Temp</p>
+                    <h3 class="text-3xl font-bold text-slate-800">24.5°C</h3>
+                </div>
+                <div class="text-xs text-slate-400 flex items-center gap-1">
+                    <i data-lucide="sun" class="w-3.5 h-3.5 text-amber-500"></i> Light exposure: Ideal
+                </div>
+            </div>
+
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm lg:col-span-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Device Controls</h3>
+                    <p class="text-sm text-slate-500 mb-6">Send manual push commands to your IoT hardware immediately.</p>
+                    
+                    <div class="space-y-4">
+                        <button onclick="triggerAction('Watering')" class="w-full p-4 bg-blue-50 border border-blue-100 text-blue-700 hover:bg-blue-100 rounded-xl font-medium transition-all flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="droplet" class="w-5 h-5 animate-bounce"></i>
+                                <span>Trigger Auto-Water</span>
+                            </div>
+                            <i data-lucide="play" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </button>
+
+                        <button onclick="triggerAction('Cleaning')" class="w-full p-4 bg-amber-50 border border-amber-100 text-amber-700 hover:bg-amber-100 rounded-xl font-medium transition-all flex items-center justify-between group">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="wind" class="w-5 h-5 group-hover:rotate-45 transition-transform"></i>
+                                <span>Trigger Mist & Sweep</span>
+                            </div>
+                            <i data-lucide="play" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="statusNotification" class="mt-6 p-3 bg-slate-50 text-slate-600 rounded-xl text-xs flex items-center gap-2 border border-slate-100 hidden">
+                    <span class="flex h-2 w-2 rounded-full bg-blue-500 animate-ping"></span>
+                    <span id="notificationText">Sending command...</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm lg:col-span-2">
+                <h3 class="text-lg font-bold text-slate-800 mb-4">Hardware Diagnostics</h3>
+                <div class="divide-y divide-slate-100">
+                    <div class="py-3 flex.items-center justify-between flex">
+                        <span class="text-sm text-slate-500 font-medium">Wi-Fi RSSI Signal</span>
+                        <span class="text-sm font-semibold text-emerald-600 flex items-center gap-1"><i data-lucide="wifi" class="w-4 h-4"></i> Strong (-54 dBm)</span>
+                    </div>
+                    <div class="py-3 flex items-center justify-between flex">
+                        <span class="text-sm text-slate-500 font-medium">Pump State</span>
+                        <span class="text-sm font-semibold text-slate-600">Idle (Standby)</span>
+                    </div>
+                    <div class="py-3 flex items-center justify-between flex">
+                        <span class="text-sm text-slate-500 font-medium">Mist Nozzle Servo</span>
+                        <span class="text-sm font-semibold text-slate-600">Calibrated (0°)</span>
+                    </div>
+                    <div class="py-3 flex items-center justify-between flex">
+                        <span class="text-sm text-slate-500 font-medium">Last Hardware Ping</span>
+                        <span class="text-sm font-semibold text-slate-400">24 seconds ago</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-100 py-8 bg-white text-center text-sm text-slate-400 mt-12">
+        <p>&copy; 2026 FloraCare OS. Powered by Smart IoT Solutions.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function triggerAction(actionName) {
+            const notification = document.getElementById('statusNotification');
+            const text = document.getElementById('notificationText');
+            
+            notification.classList.remove('hidden');
+            text.innerText = `Success: Push command "${actionName} Cycle" transmitted to device.`;
+            
+            // Auto hide after 4 seconds
+            setTimeout(() => {
+                notification.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
