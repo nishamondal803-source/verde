@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Settings - FloraCare OS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fbfcfb;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-emerald-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="p-2 bg-emerald-600 rounded-xl text-white">
+                    <i data-lucide="sprout" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-emerald-900">FloraCare<span class="text-emerald-600">OS</span></span>
+            </div>
+            
+            <div class="flex items-center gap-8 font-medium text-slate-600">
+                <a href="index.html" class="hover:text-emerald-600 transition-colors">Home</a>
+                <a href="dashboard.html" class="hover:text-emerald-600 transition-colors">Dashboard</a>
+                <a href="records.html" class="hover:text-emerald-600 transition-colors">Records</a>
+                <a href="settings.html" class="text-emerald-600 border-b-2 border-emerald-600 pb-1">Settings</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Hardware Configurations</h1>
+            <p class="text-slate-500">Fine-tune device sensors, sync calibration targets, and manage automated care thresholds.</p>
+        </div>
+
+        <form onsubmit="saveSettings(event)" class="space-y-8">
+            
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-4">
+                <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                    <div class="p-2 bg-emerald-50 text-emerald-600 rounded-lg">
+                        <i data-lucide="leaf" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-800">Target Ecosystem Profile</h2>
+                        <p class="text-xs text-slate-400">Selecting a profile auto-configures standard moisture baselines.</p>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-3 gap-4">
+                    <label class="border-2 border-emerald-500 bg-emerald-50/20 p-4 rounded-xl cursor-pointer block relative transition-all">
+                        <input type="radio" name="plant_profile" value="tropical" checked class="absolute top-4 right-4 accent-emerald-600">
+                        <span class="block font-bold text-slate-800 text-sm mb-1">Tropical Foliage</span>
+                        <span class="block text-xs text-slate-500">Monstera, Ferns, Palms. High moisture, bi-daily leaf cleaning.</span>
+                    </label>
+
+                    <label class="border border-slate-200 hover:border-slate-300 p-4 rounded-xl cursor-pointer block relative transition-all">
+                        <input type="radio" name="plant_profile" value="arid" class="absolute top-4 right-4 accent-emerald-600">
+                        <span class="block font-bold text-slate-800 text-sm mb-1">Arid / Succulent</span>
+                        <span class="block text-xs text-slate-500">Cacti, Jade, Aloe. Rare watering, dry soil preference.</span>
+                    </label>
+
+                    <label class="border border-slate-200 hover:border-slate-300 p-4 rounded-xl cursor-pointer block relative transition-all">
+                        <input type="radio" name="plant_profile" value="temperate" class="absolute top-4 right-4 accent-emerald-600">
+                        <span class="block font-bold text-slate-800 text-sm mb-1">Temperate Herbs</span>
+                        <span class="block text-xs text-slate-500">Basil, Mint, Ivy. Moderate moisture schedules.</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-4">
+                <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                    <div class="p-2 bg-blue-50 text-blue-600 rounded-lg">
+                        <i data-lucide="droplet" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-800">Auto-Watering Variables</h2>
+                        <p class="text-xs text-slate-400">Control parameters governing your mechanical pump operation.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-slate-700">Water Activation Threshold</label>
+                        <p class="text-xs text-slate-400 mb-2">Triggers the pump when capacitive soil drops below this limit:</p>
+                        <div class="flex items-center gap-3">
+                            <input type="range" min="10" max="70" value="35" class="w-full accent-emerald-600 bg-slate-100 rounded-lg h-2">
+                            <span class="text-sm font-bold text-slate-800 bg-slate-50 border border-slate-200 px-3 py-1 rounded-lg">35%</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-slate-700">Pump Dosage Quantity</label>
+                        <p class="text-xs text-slate-400 mb-2">Total liquid volume injected per triggered action event:</p>
+                        <select class="w-full px-3 py-2 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-slate-700 font-medium">
+                            <option value="50">50 ml (Microdose)</option>
+                            <option value="150" selected>150 ml (Standard)</option>
+                            <option value="300">300 ml (Deep Soak)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-4">
+                <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                    <div class="p-2 bg-amber-50 text-amber-600 rounded-lg">
+                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-800">Cleaning Nozzle Schedules</h2>
+                        <p class="text-xs text-slate-400">Set timing rules for automated leaf sweeping and dusting.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-slate-700">Execution Frequency</label>
+                        <select class="w-full px-3 py-2 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-slate-700 font-medium">
+                            <option value="1">Every 24 Hours</option>
+                            <option value="2" selected>Every 48 Hours</option>
+                            <option value="7">Weekly Routine Check</option>
+                            <option value="0">Deactivate Auto-Cleansing</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-slate-700">Misting Duration</label>
+                        <div class="flex items-center gap-3">
+                            <input type="range" min="10" max="120" value="45" class="w-full accent-emerald-600 bg-slate-100 rounded-lg h-2">
+                            <span class="text-sm font-bold text-slate-800 bg-slate-50 border border-slate-200 px-3 py-1 rounded-lg">45s</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-end gap-4 pt-4 border-t border-slate-200/60">
+                <button type="button" onclick="window.location.reload();" class="px-5 py-2.5 rounded-xl border border-slate-200 hover:border-slate-300 font-medium text-slate-600 text-sm transition-all">
+                    Reset Changes
+                </button>
+                <button type="submit" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-xl text-sm shadow-md shadow-emerald-600/10 transition-all">
+                    Transmit Configurations
+                </button>
+            </div>
+        </form>
+
+        <div id="saveFeedback" class="fixed bottom-6 right-6 p-4 bg-slate-900 text-white text-sm rounded-xl flex items-center gap-3 shadow-xl transition-all translate-y-24 opacity-0 pointer-events-none">
+            <i data-lucide="check-circle-2" class="text-emerald-400 w-5 h-5"></i>
+            <span>Parameters saved & successfully flashed to hardware EEPROM!</span>
+        </div>
+
+    </main>
+
+    <footer class="border-t border-slate-100 py-8 bg-white text-center text-sm text-slate-400 mt-16">
+        <p>&copy; 2026 FloraCare OS. Powered by Smart IoT Solutions.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Simple script to toggle visual borders on radio select cards dynamically
+        document.querySelectorAll('input[name="plant_profile"]').forEach((radio) => {
+            radio.addEventListener('change', (e) => {
+                // Remove selected border classes from all label wrapper tags
+                document.querySelectorAll('input[name="plant_profile"]').forEach((r) => {
+                    const label = r.closest('label');
+                    label.className = "border border-slate-200 hover:border-slate-300 p-4 rounded-xl cursor-pointer block relative transition-all";
+                });
+                // Assign emerald classes to current element context wrapper
+                if (e.target.checked) {
+                    const activeLabel = e.target.closest('label');
+                    activeLabel.className = "border-2 border-emerald-500 bg-emerald-50/20 p-4 rounded-xl cursor-pointer block relative transition-all";
+                }
+            });
+        });
+
+        function saveSettings(event) {
+            event.preventDefault(); // Stop native HTML reload behavior
+            
+            const feedback = document.getElementById("saveFeedback");
+            
+            // Pop out prompt feedback block dynamically onto view
+            feedback.classList.remove("translate-y-24", "opacity-0");
+            feedback.classList.add("translate-y-0", "opacity-100");
+
+            setTimeout(() => {
+                feedback.classList.remove("translate-y-0", "opacity-100");
+                feedback.classList.add("translate-y-24", "opacity-0");
+            }, 4500);
+        }
+    </script>
+</body>
+</html>
